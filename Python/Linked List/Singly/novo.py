@@ -62,6 +62,76 @@ class LinkedList:
             new_node.next = current_node.next
             current_node.next = new_node
 
+    def add_before_node(self,data,node_before):
+        if self.head is None:
+            print('Liked list is empty')
+            return
+
+        if self.head.value == data:
+            node = Node(data)
+            node.next = self.head
+            self.head = node
+            return
+
+        current_node = self.head
+
+        while current_node.next is not None:
+            if current_node.next.value == node_before:
+                break
+
+            current_node = current_node.next
+
+        if current_node is None:
+            print('Node is not present in the Linled List')
+
+        else:
+            new_node = Node(data)
+            new_node.next = current_node.next
+            current_node.next = new_node
+
+    def removing_beggin(self):
+
+        if self.head is None:
+            print('Liked list is empty')
+
+        else:
+            self.head = self.head.next
+
+    def removing_end(self):
+        if self.head is None:
+            print('Liked list is empty')
+            return
+        elif self.head.next is None:
+            self.head= None
+
+        current_node = self.head
+
+        while current_node.next.next is not None:
+            current_node = current_node.next
+
+        current_node.next = None
+
+    def removing_middle(self,node):
+
+        if self.head is None:
+            print('Liked list is empty')
+            return
+        if node == self.head.value:
+            self.removing_beggin()
+            return
+
+        current_node = self.head
+
+        while current_node.next is not None:
+            if node == current_node.next.value:
+                break
+            current_node = current_node.next
+
+        if current_node.next is None:
+            print('Node not found')
+        else:
+            current_node.next = current_node.next.next
+
     def find(self, valor):
 
         currentnode = self.head
@@ -91,11 +161,18 @@ linked = LinkedList()
 
 linked.insert(10)
 linked.insert(20)
-linked.insert(30)
+
 linked.add_begining(50)
-linked.add_begining(100)
+
+linked.add_after_node(60,10)
+linked.add_before_node(50,10)
+
+linked.insert('Vitor')
+linked.add_before_node('Emmanuel','Vitor')
+
+linked.removing_beggin()
+
+linked.removing_end()
+linked.removing_end()
+# linked.removing_middle(60)
 linked.printlist()
-# print('')
-# linked.add_after_node(60,10)
-#
-# linked.printList()
