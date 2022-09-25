@@ -52,9 +52,6 @@ class LinkedList(object):
 
             currentNode = currentNode.next
 
-
-
-
     def find(self, val):
         """
         Search for item in Linked List with data = val
