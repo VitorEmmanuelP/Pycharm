@@ -73,10 +73,10 @@ class doublyLL:
 
         if self.head is None:
             print('The list is empty')
+            return
+
         else:
-
             current_node = self.head
-
             while current_node is not None:
                 if current_node.value == node:
                     break
@@ -87,7 +87,10 @@ class doublyLL:
             else:
                 new_node.next = current_node
                 new_node.previous = current_node.previous
-                current_node.previous.next = new_node
+                if current_node.previous is not None:
+                     current_node.previous.next = new_node
+                else:
+                    self.head = new_node
                 current_node.previous = new_node
 
     def after_insert(self, value, node):
@@ -148,7 +151,9 @@ class doublyLL:
 
         if self.head is None:
             print('The list is empty')
+            return
         else:
+
             current_node = self.head
 
             while current_node is not None:
@@ -156,8 +161,15 @@ class doublyLL:
                     break
                 current_node = current_node.next
 
-            current_node.next.previous = current_node.previous
-            current_node.previous.next = current_node.next
+            if current_node.previous is None:
+                current_node.next.previous = None
+                self.head = current_node.next
+            elif current_node.next is None:
+                current_node.previous.next = None
+
+            else:
+                current_node.next.previous = current_node.previous
+                current_node.previous.next = current_node.next
 
     def print_ll(self):
         if self.head is None:
@@ -218,20 +230,27 @@ class doublyLL:
 linked = doublyLL()
 
 linked.begin_insert(10)
-linked.begin_insert(50)
-linked.end_insert(20)
-linked.before_insert(100, 10)
-linked.before_insert(200, 100)
-linked.after_insert(60, 200)
-linked.after_insert(600, 20)
+linked.end_insert(60)
+linked.before_insert(50,10)
 linked.print_ll()
 print('')
+
 linked.removing_middle(60)
 linked.print_ll()
 print('')
-linked.removing_tail()
+linked.removing_middle(50)
 linked.print_ll()
 print('')
-linked.removing_head()
+linked.removing_middle(10)
 linked.print_ll()
-print('')
+
+# print('')
+# linked.removing_middle(60)
+# linked.print_ll()
+# print('')
+# linked.removing_tail()
+# linked.print_ll()
+# print('')
+# linked.removing_head()
+# linked.print_ll()
+# print('')
