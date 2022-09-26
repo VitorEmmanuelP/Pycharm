@@ -30,7 +30,7 @@ class Node:
         self.__previous = data
 
 
-class doublyLL:
+class DoublyLL:
 
     def __init__(self):
 
@@ -88,7 +88,7 @@ class doublyLL:
                 new_node.next = current_node
                 new_node.previous = current_node.previous
                 if current_node.previous is not None:
-                     current_node.previous.next = new_node
+                    current_node.previous.next = new_node
                 else:
                     self.head = new_node
                 current_node.previous = new_node
@@ -147,8 +147,8 @@ class doublyLL:
                 current_node = current_node.next
 
             current_node.previous.next = None
-    def removing_middle(self, node):
 
+    def removing_middle(self, node):
         if self.head is None:
             print('The list is empty')
             return
@@ -214,7 +214,6 @@ class doublyLL:
         return current_node
 
     def __print_node_status(self, node):
-
         try:
             next = node.next.value
         except AttributeError:
@@ -227,7 +226,7 @@ class doublyLL:
         print(f'next:{previous}, prev:{next}')
 
 
-linked = doublyLL()
+linked = DoublyLL()
 
 linked.begin_insert(10)
 linked.end_insert(60)
