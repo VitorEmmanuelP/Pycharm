@@ -89,7 +89,7 @@ class LinkedList:
             new_node.next = current_node.next
             current_node.next = new_node
 
-    def removing_beggin(self):
+    def removing_head(self):
 
         if self.head is None:
             print('Liked list is empty')
@@ -97,7 +97,7 @@ class LinkedList:
         else:
             self.head = self.head.next
 
-    def removing_end(self):
+    def removing_tail(self):
         if self.head is None:
             print('Liked list is empty')
             return
