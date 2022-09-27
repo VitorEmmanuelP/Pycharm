@@ -37,7 +37,7 @@ class LinkedList:
         else:
             current_node = self.head
             new_node.next = current_node
-            current_node.next= new_node
+            current_node.next = new_node
             self.head = new_node
 
     def add_end(self, data):
@@ -77,7 +77,7 @@ class LinkedList:
             new_node.next = current_node.next
             current_node.next = new_node
 
-    def add_before_node(self,data,node_before):
+    def add_before_node(self, data, node_before):
         new_node = Node(data)
 
         if self.head is None:
@@ -133,7 +133,7 @@ class LinkedList:
 
         current_node.next = self.head
 
-    def removing_middle(self,node):
+    def removing_middle(self, node):
 
         if self.head is None:
             print('Liked list is empty')
@@ -192,8 +192,8 @@ linked.add_end(60)
 linked.add_end(70)
 linked.printlist()
 
-linked.add_before_node(30,40)
-linked.add_after_node(80,70)
+linked.add_before_node(30, 40)
+linked.add_after_node(80, 70)
 linked.printlist()
 
 linked.removing_head()
