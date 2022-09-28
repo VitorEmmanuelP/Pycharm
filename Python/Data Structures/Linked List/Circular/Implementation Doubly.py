@@ -57,7 +57,6 @@ class DoublyLL:
         self.head.previous = new_node
         self.head = new_node
 
-
     def end_insert(self, data):
 
         if self.head is None:
@@ -157,7 +156,6 @@ class DoublyLL:
             self.head.previous = self.head.previous.previous
             self.head.previous.next = self.head
 
-
     def removing_middle(self, node):
 
         if self.head is None:
@@ -205,7 +203,6 @@ class DoublyLL:
                 if current_node.previous == self.head:
                     break
             print(current_node.value, '-->', end=' ')
-
 
     def find(self, node):
 
