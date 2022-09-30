@@ -1,31 +1,31 @@
-def sort_by_descending(lista):
-    for index in range(1, len(lista)):
+def sort_by_descending(list_of_numbers):
+    for index in range(1, len(list_of_numbers)):
 
-        current_element = lista[index]
+        current_element = list_of_numbers[index]
         pos = index
 
-        while current_element > lista[pos-1] and pos > 0:
-            lista[pos] = lista[pos - 1]
+        while current_element > list_of_numbers[pos - 1] and pos > 0:
+            list_of_numbers[pos] = list_of_numbers[pos - 1]
             pos -= 1
 
-        lista[pos] = current_element
+        list_of_numbers[pos] = current_element
 
-    print(lista)
+    print(list_of_numbers)
 
 
-def sort_by_ascending(lista):
-    for index in range(1, len(lista)):
+def sort_by_ascending(list_of_numbers):
+    for index in range(1, len(list_of_numbers)):
 
-        current_element = lista[index]
+        current_element = list_of_numbers[index]
         pos = index
 
-        while current_element < lista[pos-1] and pos > 0:
-            lista[pos] = lista[pos - 1]
+        while current_element < list_of_numbers[pos - 1] and pos > 0:
+            list_of_numbers[pos] = list_of_numbers[pos - 1]
             pos -= 1
 
-        lista[pos] = current_element
+        list_of_numbers[pos] = current_element
 
-    print(lista)
+    print(list_of_numbers)
 
 
 # lista = [2,4,3,5,1]
