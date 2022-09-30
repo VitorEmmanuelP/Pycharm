@@ -1,5 +1,5 @@
 # Consider the first element sorted, take the thirst element of the unsorted (u1) and compare with the sorted part (s1)
-# If u1 < s1 then insert u1 in the correct index, else leave as it is, then take next element
+# If u1 < s1 then insert u1 in the correct index, else leave as it is, then take next element repeat etc
 
 def sort_by_descending(list_of_numbers):
     for index in range(1, len(list_of_numbers)):
