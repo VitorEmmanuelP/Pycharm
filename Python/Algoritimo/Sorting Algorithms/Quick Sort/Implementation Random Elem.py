@@ -1,6 +1,6 @@
 from random import randint
 
-
+# https://realpython.com/sorting-algorithms-python/#the-quicksort-algorithm-in-python
 def quicksort(array):
     # If the input array contains fewer than two elements,
     # then return it as the result of the function

@@ -1,3 +1,4 @@
+# https://www.geeksforgeeks.org/merge-sort/
 def merge_sort(list_of_numbers):
     if len(list_of_numbers) > 1:
         mid = len(list_of_numbers) // 2
@@ -28,6 +29,7 @@ def merge_sort(list_of_numbers):
             list_of_numbers[k] = right_list[j]
             j += 1
             k += 1
+
 
 lista = [20,1,50,40,10]
 

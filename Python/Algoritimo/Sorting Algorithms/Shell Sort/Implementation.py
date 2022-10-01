@@ -1,3 +1,10 @@
+# 1. Take the list of numbers
+# 2. Find out the gap / incrementor
+# 3. create the sublist based on gap and sort
+# them using insertion sort algorithm .
+# 4. reduce gap and repeat step 3 .
+# 5. stop when gap is 0 .
+
 def shell_sort(list_of_numbers):
 
     gap = len(list_of_numbers) // 2

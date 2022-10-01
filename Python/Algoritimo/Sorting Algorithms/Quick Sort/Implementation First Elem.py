@@ -1,3 +1,4 @@
+# https://joaoarthurbm.github.io/eda/posts/quick-sort/
 def pivot_place(list_of_numbers, first_index, last_index):
     """ to het the correct position of the pivot element"""
 

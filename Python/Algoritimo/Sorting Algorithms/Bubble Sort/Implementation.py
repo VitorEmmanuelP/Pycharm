@@ -4,6 +4,7 @@
 #    list swap them .
 # 3. If the Current element is less than the next element , move to
 #    the next element . Repeat step 1 .
+# https://blog.betrybe.com/tecnologia/bubble-sort-tudo-sobre/
 def sort_by_descending(list_of_numbers):
     for j in range(len(list_of_numbers) - 1):
         for i in range(len(list_of_numbers) - 1 - j):
