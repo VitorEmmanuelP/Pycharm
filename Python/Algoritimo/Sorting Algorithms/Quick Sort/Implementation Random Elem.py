@@ -32,4 +32,5 @@ def quicksort(array):
 lista = [56, 26, 93, 17, 31, 44]
 print(quicksort(lista))
 
+
 # https://realpython.com/sorting-algorithms-python/#the-quicksort-algorithm-in-python

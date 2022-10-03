@@ -18,7 +18,7 @@ def binary_search(list_of_numbers, key_value):
         elif key > list_of_numbers[mid]:
             low = mid + 1
         else:
-            high = mid + 1
+            high = mid - 1
 
     if found:
         print('Key is found')
