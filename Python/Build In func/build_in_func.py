@@ -86,8 +86,10 @@
 # Chr: turn unicodes into charactes, emote, etc ord() turns into unicode
 # https://www.ssec.wisc.edu/~tomw/java/unicode.html
 #
-print(chr(200))
-print(chr(64))
-print(chr(36))
+# print(chr(200))
+# print(chr(64))
+# print(chr(36))
 
-# ClassMethod: 
+# ClassMethod:
+
+print(int('20',))
