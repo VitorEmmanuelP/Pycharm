@@ -4,7 +4,7 @@
 # Otherwise, narrow it to the upper half.
 # Repeatedly check from the second point until the value is found or the interval is empty.
 
-def binary_search(list_of_numbers, key_value):
+def binary_search(list_of_numbers):
 
     low = 0
     high = len(list_of_numbers) - 1
@@ -27,9 +27,10 @@ def binary_search(list_of_numbers, key_value):
 
 
 lista = [23,1,4,2,3]
+# binary search must be in a sorted list
 lista.sort()
 
 key = int(input('Enter the key: '))
 
-binary_search(lista,key)
+binary_search(lista)
 
