@@ -1,108 +1,54 @@
-import random
-
-
 class Conta:
 
-    # Constructor
-    def __init__(self):
-        self._numConta = None
-        self._dono = None
-        self._tipo = None
-        self._saldo = 0
-        self._status = False
 
-    # GETTERS
-    @property
-    def numConta(self):
-        return self._numConta
+    def __init__(self, titular, saldo, limite):
+        self._titular = titular
+        self._saldo   = saldo
+        self._limite  = limite
 
-    @property
-    def tipo(self):
-        return self._tipo
 
-    @property
-    def dono(self):
-        return self._dono
+    def extrato(self):
+        print("Saldo de {} do titular {}".format(self.__saldo, self.__titular))
 
+
+    def deposita(self, valor):
+        self._saldo += valor
+
+
+    def saca(self, valor):
+        self._saldo -= valor
+
+
+    def transfere(self, valor, destino):
+        self.saca(valor)
+        destino.deposita(valor)
+
+
+    # Getters e Setters usando @property
     @property
     def saldo(self):
         return self._saldo
 
+
     @property
-    def status(self):
-        return self._status
+    def titular(self):
+        return self._titular
 
-    # SETTERS
 
-    @numConta.setter
-    def numConta(self, numero):
-        self._numConta = numero
+    @property
+    def limite(self):
+        return self._limite
 
-    @tipo.setter
-    def tipo(self, novo_tipo):
-        self._tipo = novo_tipo
 
-    @dono.setter
-    def dono(self, novo_dono):
-        self._dono = novo_dono
+    @limite.setter
+    def limite(self, limite):
+        print('setter')
+        self._limite += limite
 
-    @saldo.setter
-    def saldo(self, novo_saldo):
-        self._saldo = novo_saldo
 
-    @status.setter
-    def status(self, novo_status):
-        self._status = novo_status
 
-    def abriConta(self, dono, tipo):
+minha_conta = Conta("Vitor", 1000, 5000)
 
-        self.dono = dono
-        self.tipo = tipo
-        self.numConta = random.randint(0, 1000)
-        self.status = True
-        self.saldo = 50 if self.tipo == 'CC' else (150 if self.tipo == 'CP' else 0)
 
-    def fecharConta(self):
-        if self.saldo > 0:
-            print('Retire todo dinheiro antes de fechar a conta')
-        elif self.saldo < 0:
-            print('Conta em debito')
-        else:
-            print('Conta fechada')
-            self.status = False
-
-    def depositar(self, valor):
-        if self.status:
-            self.saldo += valor
-            print('Saldo depositado')
-        else:
-            print('Abra a conta primeiro')
-
-    def sacar(self, valor):
-        if self.status:
-            if self.saldo < valor:
-                print('Saldo indisponivel')
-            else:
-                print('Saldo sacado')
-                self.saldo -= valor
-        else:
-            print('Abra a conta primeiro')
-
-    def pagamentoMensal(self):
-        valor = 0
-        if self.tipo == 'CC':
-            valor = 12
-        elif self.tipo == 'CP':
-            valor = 20
-        if self.saldo < 12:
-            print('Saldo insuficiente')
-        else:
-            self.saldo -= valor
-
-    def informacao(self):
-        print(f'numero:{self.numConta}\n'
-              f'dono: {self.dono}\n'
-              f'tipo: {self.tipo}\n'
-              f'saldo: {self.saldo}\n'
-              f'status: {self.status}')
+print(minha_conta.limite)
 
