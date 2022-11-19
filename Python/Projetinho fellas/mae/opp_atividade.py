@@ -96,24 +96,22 @@ class AutomacaoAtividade:
     def __disciplina(self, disciplina_escolhida):
         try:
             self.driver.find_element(self.By.XPATH,
-                                     '/html/body/div[1]/div/div/div/div/div/div[2]/div/div/div/div[3]/div[1]/'
-                                     'div[2]/div/div[2]/div[1]/span[1]/a').click()
+                                     '/html/body/div[1]/div/div/div/div/div/div[2]/div/div/div/div[3]/div[1]/div[2]/div[1]/div[2]/span[2]/a').click()
 
             time.sleep(0.1)
 
             len_disciplina = len(self.driver.find_elements(self.By.XPATH, '/html/body/div[4]/div/div/div[3]/'
                                                                           'table/tbody[1]/tr'))
+
             if len_disciplina > 1:
 
                 for i in range(1, len_disciplina + 1):
-
                     disciplina = self.driver.find_element(self.By.XPATH,
                                                           f'/html/body/div[4]/div/div/div[3]/table/tbody[1]/'
                                                           f'tr[{i}]/td/div')
 
                     disciplina_texto = self.__filtrar_texto('disciplina', disciplina.text)
-
-                    if disciplina_texto == disciplina_escolhida:
+                    if disciplina_texto.lower() == disciplina_escolhida.lower():
                         disciplina.click()
                         break
 

@@ -6,3 +6,4 @@ while True:
     lista = funcao_main.input_do_usuario(pergunta)
 
     funcao_main.automacao(pergunta, lista)
+

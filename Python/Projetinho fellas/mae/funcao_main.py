@@ -45,14 +45,15 @@ def automacao(pergunta, lista):
     service = Service(ChromeDriverManager().install())
 
     options = webdriver.ChromeOptions()
+    # options.add_experimental_option('debuggerAddress', 'localhost:8989')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_experimental_option('detach', True)
 
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(10)
 
-    login = 'USER LOGIN'
-    senha = 'USER PASSWORD'
+    login = 'USER'
+    senha = 'PASSWORD'
 
     iniciar_chrome(driver, login, senha)
 
@@ -93,3 +94,4 @@ def automacao(pergunta, lista):
             time.sleep(1)
 
         driver.quit()
+
