@@ -11,8 +11,8 @@ service = Service(ChromeDriverManager().install())
 options = webdriver.ChromeOptions()
 options.add_experimental_option('debuggerAddress', 'localhost:8989')
 
-login = '08000788616'
-senha = 'Jf2104@'
+login = 'Login'
+senha = 'passoword'
 
 #
 driver = webdriver.Chrome(service=service, options=options)
